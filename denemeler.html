@@ -448,19 +448,74 @@
         function squareSum(numbers) {
             console.log(numbers);
             var sqr = numbers.map(num => {
-                return num*num;
+                return num * num;
 
             })
             console.log(sqr);
             var sum = 0;
             for (let i = 0; i < sqr.length; i++) {
-                
+
                 sum = sum + sqr[i];
 
             }
             console.log(sum);
         }
         /* squareSum([0,2,3]) */
+
+
+        function goodVsEvil(good, evil) {
+            goodarr = good.split(` `);
+            evilarr = evil.split(` `);
+            
+            var goodobj = {
+                Hobbits: 1,
+                Men: 2,
+                Elves: 3,
+                Dwarves: 3,
+                Eagles: 4,
+                Wizards: 10
+            };
+            var evilobj = {
+                Orcs: 1,
+                Men: 2,
+                Wargs: 2,
+                Goblins: 2,
+                UrukHai: 3,
+                Trolls: 5,
+                Wizards: 10
+
+            };
+            var sumgood=0
+            var sumbad=0
+            for (let i = 0; i < goodarr.length; i++) {
+                const element=parseInt(goodarr[i]);
+                if (element !==0) {
+                    var goodworth=element*parseInt(Object.values(goodobj)[i]);
+                    
+                    sumgood = sumgood + goodworth;
+                }
+                
+            }
+            for (let i = 0; i < evilarr.length; i++) {
+                
+                if (evilarr[i] !==`0`) {
+                    var evilworth=evilarr[i]*parseInt(Object.values(evilobj)[i]);
+                    sumbad = sumbad + evilworth;
+                }
+                
+            }
+            
+            if (sumgood > sumbad) {
+                return "Battle Result: Good triumphs over Evil";
+            } else if(sumgood< sumbad){
+                return "Battle Result: Evil eradicates all trace of Good"
+            }else{
+                return "Battle Result: No victor on this battle field"
+            }
+
+            
+        }
+        goodVsEvil('0 1 0 1 0 1', '1 1 1 1 1 1 1')
     </script>
 </body>
 
