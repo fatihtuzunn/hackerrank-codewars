@@ -96,7 +96,7 @@
             console.log(lastNum);
 
         }
-        descendingOrder(356854);
+        /* descendingOrder(356854); */
 
         /*      function sortArray(array) {
        var temp = 0;
@@ -323,8 +323,8 @@
                 console.log(err.message);
             }
         }
-        reverseString("1234");
-        reverseString(486);
+        /* reverseString("1234");
+        reverseString(486); */
 
 
 
@@ -333,10 +333,10 @@
             // Add some more code to run some checks on initialAge
 
             this.age = initialAge;
-            
+
 
             if (this.age < 0) {
-                console.log( "Age is not valid, setting age to 0.");
+                console.log("Age is not valid, setting age to 0.");
                 this.age = 0;
             }
 
@@ -345,12 +345,12 @@
 
             this.amIOld = function () {
                 // Do some computations in here and print out the correct statement to the console
-                
+
 
                 age = this.age;
                 console.log(age);
-                
-                
+
+
                 if (age < 13) {
 
                     console.log("You are young.");
@@ -364,14 +364,103 @@
             };
 
             this.yearPasses = function () {
-                this.age=+1;
+                this.age = +1;
             };
         }
-        var age =12;
+        /* var age = 12;
         const p = new Person(age);
-        p.amIOld();
+        p.amIOld(); */
 
-        
+
+
+        function LetterChanges(str) {
+            const arr = str.split(``);
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            const alphArr = alphabet.split(``);
+            const newArr = [];
+            const newwarr = [];
+
+            arr.forEach((p) => {
+                for (let i = 0; i <= alphArr.length; i++) {
+                    if (p == alphArr[i]) {
+                        newArr.push(alphArr[i + 1])
+
+                    }
+
+
+                }
+
+            })
+
+
+            return newwarr;
+            // code goes here  
+
+
+        }
+
+        function pigIt(str) {
+            //Code here
+            const strArr = str.split(" ");
+            strArr.map((stat) => {
+
+
+
+            })
+
+        }
+        /*          pigIt('Pig latin is cool');*/
+
+        var pers = 1;
+
+
+
+        function persistence(n) {
+
+
+            if (n < 10) {
+                pers = 0;
+                console.log(pers);
+            } else {
+                const arr = n.toString().split(``);
+                var mult = 1;
+                for (let i = 0; i < arr.length; i++) {
+                    mult = mult * arr[i];
+                }
+
+                if (mult >= 0 && mult < 10) {
+                    /* console.log(mult); */
+                    console.log(pers);
+                } else {
+                    pers++;
+                    persistence(mult); //recursion
+                }
+
+            }
+
+
+        }
+
+
+
+        /*         persistence(10); */
+
+        function squareSum(numbers) {
+            console.log(numbers);
+            var sqr = numbers.map(num => {
+                return num*num;
+
+            })
+            console.log(sqr);
+            var sum = 0;
+            for (let i = 0; i < sqr.length; i++) {
+                
+                sum = sum + sqr[i];
+
+            }
+            console.log(sum);
+        }
+        /* squareSum([0,2,3]) */
     </script>
 </body>
 
